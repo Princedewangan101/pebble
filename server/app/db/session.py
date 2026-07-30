@@ -10,7 +10,7 @@ Usage inside a route handler::
 """
 
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
-
+from typing import AsyncGenerator
 from app.config import settings
 
 engine = create_async_engine(settings.database_url, echo=False)
@@ -20,7 +20,7 @@ async_session_factory = async_sessionmaker(engine, class_=AsyncSession, expire_o
 """Session factory that creates :class:`AsyncSession` instances on demand."""
 
 
-async def get_db() -> AsyncSession:
+async def get_db() -> AsyncGenerator:
     """FastAPI dependency that provides an async database session.
 
     Yields a session, commits on success, rolls back on any exception,

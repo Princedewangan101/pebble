@@ -6,6 +6,7 @@ Importing this module is enough to register all model classes with
     from app.models import *   # noqa: F401, F403
 """
 
+from app.models.users import Users
+from app.models.projects import Projects
 
-
-__all__ = ["Users"]
+__all__ = ["Users", "Projects"]
