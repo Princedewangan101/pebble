@@ -1,0 +1,11 @@
+"""Convenience re-exports for all SQLAlchemy ORM models.
+
+Importing this module is enough to register all model classes with
+``Base.metadata`` so that Alembic autogenerate can detect them::
+
+    from app.models import *   # noqa: F401, F403
+"""
+
+
+
+__all__ = ["Users"]
